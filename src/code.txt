@@ -1,0 +1,4 @@
+cd "C:\Users\ASHUTOSH CHATURVEDI\dsa-visualizer"
+
+
+npm start
