@@ -580,31 +580,44 @@ const resetGrid = () => {
   </div>
 
       <div
+  style={{
+    display: 'flex',
+    alignItems: 'flex-end',
+    height: '220px',
+    marginTop: 20,
+    justifyContent: 'center',
+  }}
+>
+  {array.map((value, idx) => (
+    <div
+      key={idx}
+      style={{
+        margin: '0 1.1px', // a bit more space to fit the label nicely
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+      }}
+    >
+      {/* Show the value on top */}
+      <div style={{ marginBottom: 4, fontSize: 12, color: '#333' }}>{value}</div>
+
+      {/* The bar itself */}
+      <div
         style={{
-          display: 'flex',
-          alignItems: 'flex-end',
-          height: '220px',
-          marginTop: 20,
-          justifyContent: 'center',
+          backgroundColor: sorted.includes(idx)
+            ? 'green'
+            : highlighted.includes(idx)
+            ? 'red'
+            : 'turquoise',
+          width: '10px',
+          height: `${value}px`,
+          transition: 'height 0.2s ease',
         }}
-      >
-        {array.map((value, idx) => (
-          <div
-            key={idx}
-            style={{
-              margin: '0 2px',
-              backgroundColor: sorted.includes(idx)
-                ? 'green'
-                : highlighted.includes(idx)
-                ? 'red'
-                : 'turquoise',
-              width: '10px',
-              height: `${value}px`,
-              transition: 'height 0.2s ease',
-            }}
-          />
-        ))}
-      </div>
+      />
+    </div>
+  ))}
+</div>
+
       <div style={{ marginTop: 30 }}>
       <h3>Sorting Stats</h3>
       <SortStatsChart stats={sortStats} />
