@@ -73,6 +73,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 Try out the Pathfinding Visualizer online:
 
-🔗 [https://your-vercel-url.vercel.app](https://your-vercel-url.vercel.app)
+🔗 [https://sorting-pathfinding-visualizer.vercel.app/](https://sorting-pathfinding-visualizer.vercel.app/)
 
 Explore and visualize algorithms like BFS, DFS, and Dijkstra in action with animated steps and stats!
+
