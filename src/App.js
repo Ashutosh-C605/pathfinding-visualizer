@@ -623,16 +623,16 @@ const resetGrid = () => {
 
     </div>
     
-        <h1 style={{ marginTop: '60px' }}>Pathfinding Visualizer</h1>
+        <h1 style={{ marginTop: '80px' }}>Pathfinding Visualizer</h1>
       <button onClick={handleBFS} disabled={isRunning}
-      style={{ marginTop: 30, opacity: isRunning ? 0.5 : 1 }}>
+      style={{ marginTop: 20, opacity: isRunning ? 0.5 : 1 }}>
         BFS
       </button>
       <button disabled={isRunning} onClick={handleDFS}
-      style={{ marginTop: 30, marginLeft: 20, opacity: isRunning ? 0.5 : 1 }}>
+      style={{ marginTop: 20, marginLeft: 20, opacity: isRunning ? 0.5 : 1 }}>
         DFS</button>
       <button onClick={handleDijkstra} disabled={isRunning}
-      style={{ marginTop: 30, marginLeft: 20, opacity: isRunning ? 0.5 : 1 }}>
+      style={{ marginTop: 20, marginLeft: 20, opacity: isRunning ? 0.5 : 1 }}>
       Visualize Dijkstra
         </button>
 
@@ -641,25 +641,26 @@ const resetGrid = () => {
   <button
     onClick={() => setSelecting('start')}
     disabled={selecting === 'start'}
-    style={{ marginRight: 10, marginBottom: 20 }}
+    style={{ marginRight: 10, marginBottom: 10 }}
   >
     Select Start Node
   </button>
   <button
     onClick={() => setSelecting('end')}
     disabled={selecting === 'end'}
-    style={{ marginRight: 10, marginBotttom: 20 }}
+    style={{ marginRight: 10, marginBotttom: 10 }}
   >
     Select End Node
   </button>
   <button
     onClick={() => setSelecting('wall')}
     disabled={selecting === 'wall'}
-    style={{ marginRight: 10, marginBottom: 20 }}
+    style={{ marginRight: 10, marginBottom: 10 }}
   >
     Toggle Wall Mode
   </button>
-  <button onClick={resetGrid} disabled={isRunning}>
+  <button onClick={resetGrid} disabled={isRunning}
+      style={{ marginRight: 10, marginBottom: 10 }}>
   Reset Grid
 </button>
 
@@ -676,7 +677,7 @@ const resetGrid = () => {
   setEndNode={setEndNode}
   onCellClick={onCellClick}
 />
-<div style={{ marginTop: 20 }}>
+<div style={{ marginTop: 10 }}>
   <h3>Pathfinding Stats</h3>
   <p>Cells Visited: {pathStats.visited}</p>
   <p>Time Taken: {pathStats.time} ms</p>
