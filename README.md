@@ -68,3 +68,11 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+## Live Demo
+
+Try out the Pathfinding Visualizer online:
+
+🔗 [https://your-vercel-url.vercel.app](https://your-vercel-url.vercel.app)
+
+Explore and visualize algorithms like BFS, DFS, and Dijkstra in action with animated steps and stats!
