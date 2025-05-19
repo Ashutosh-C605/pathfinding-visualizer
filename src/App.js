@@ -6,7 +6,6 @@ import SortStatsChart from './SortStatsChart';
 const START_ROW = 5, START_COL = 5;
 const END_ROW   = 15, END_COL   = 15;
 
-
 function App() {
   function generateRandomArray() {
     let arr = [];
