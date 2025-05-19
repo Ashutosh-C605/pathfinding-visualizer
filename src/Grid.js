@@ -21,7 +21,7 @@ class PriorityQueue {
 
 export function createGrid() {
   const grid = [];
-  for (let row = 0; row < 20; row++) {
+  for (let row = 0; row < 26; row++) {
     const currentRow = [];
     for (let col = 0; col < 50; col++) {
       currentRow.push({
@@ -222,7 +222,7 @@ export default function Grid({ grid, onCellClick }) {
                 style={{
                   width: 20,
                   height: 20,
-                  border: '1px solid #ccc',
+                  border: '1.2px solid #ccc',
                   backgroundColor: node.isStart
                     ? 'green'
                     : node.isEnd
