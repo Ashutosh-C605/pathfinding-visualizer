@@ -1,4 +1,5 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
+
 import Grid, { createGrid, bfs, dfs, dijkstra, highlightShortestPath} from './Grid';
 import SortStatsChart from './SortStatsChart';
 
