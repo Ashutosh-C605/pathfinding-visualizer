@@ -30,6 +30,7 @@ function App() {
   const [sortStats, setSortStats] = useState([]);
   const [originalArray, setOriginalArray] = useState(array);
   const [pathStats, setPathStats] = useState({ visited: 0, time: 0 });
+  const [isPaused, setIsPaused] = useState(false);
 
 
   function resetArray() {
@@ -42,7 +43,13 @@ function App() {
 }
 
 
-  const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
+  const delay = async (ms) => {
+  let elapsed = 0;
+  while (isPaused) {
+    await new Promise(resolve => setTimeout(resolve, 50)); // check every 50ms
+  }
+  return new Promise(resolve => setTimeout(resolve, ms));
+};
 
   // Bubble Sort
   async function bubbleSort() {
@@ -556,6 +563,14 @@ const resetGrid = () => {
       style={{ marginLeft: 10, opacity: isSorting ? 0.5 : 1 }}
     >
       Heap Sort
+    </button>
+
+    <button
+      onClick={() => setIsPaused(p => !p)}
+      disabled={!isSorting}
+      style={{ marginLeft: 10, opacity: isSorting ? 1 : 0.5 }}
+    >
+      {isPaused ? 'Resume' : 'Pause'}
     </button>
       
     <div style={{ marginTop: 20 }}>
