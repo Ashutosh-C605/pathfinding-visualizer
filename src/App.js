@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import Grid, { createGrid, bfs, dfs, dijkstra, highlightShortestPath} from './Grid';
 import SortStatsChart from './SortStatsChart';
 
@@ -32,6 +32,11 @@ function App() {
   const [pathStats, setPathStats] = useState({ visited: 0, time: 0 });
   const [isPaused, setIsPaused] = useState(false);
 
+  const isPausedRef = useRef(false);
+
+useEffect(() => {
+  isPausedRef.current = isPaused;
+}, [isPaused]);
 
   function resetArray() {
   if (isSorting) return;
@@ -44,9 +49,8 @@ function App() {
 
 
   const delay = async (ms) => {
-  let elapsed = 0;
-  while (isPaused) {
-    await new Promise(resolve => setTimeout(resolve, 50)); // check every 50ms
+  while (isPausedRef.current) {
+    await new Promise(resolve => setTimeout(resolve, 50));
   }
   return new Promise(resolve => setTimeout(resolve, ms));
 };
