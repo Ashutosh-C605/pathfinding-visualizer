@@ -450,7 +450,8 @@ const resetGrid = () => {
       ...cell,
       isWall: false,
       isVisited: false,
-      // Keep start/end as is or reset them to defaults if you want
+      isPath: false, // reset path highlight
+      distance: undefined, // reset distance property
       isStart: cell.x === startNode.row && cell.y === startNode.col,
       isEnd: cell.x === endNode.row && cell.y === endNode.col,
     }))
@@ -458,6 +459,7 @@ const resetGrid = () => {
 
   setGrid(newGrid);
 };
+
 
 
   return (
